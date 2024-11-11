@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /goguru/
+RewriteCond $1 !^(images|stylesheets|javascript)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /goguru/index.php?/$1 [L]
+Header add Access-Control-Allow-Methods "GET,POST"
+
